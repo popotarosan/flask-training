@@ -12,7 +12,7 @@
     <!-- ナビバーを生成 -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <!-- プロジェクト名とかロゴとか -->
-            <a class="navbar-brand" href="/">
+            <a class="navbar-brand" href="{{url_for('show_entries')}}">
                 Flask Blog
             </a>
             <!-- トグル生成 -->
@@ -27,13 +27,13 @@
                     {% if not session.logged_in %}
 
                         <li class="nav-item">
-                                <a class="nav-link" href="/login">
+                                <a class="nav-link" href="{{url_for('login')}}">
                                     ログイン
                                 </a>
                         </li>
                     {% else %}
                         <li class="nav-item">
-                                <a class="nav-link" href="/logout">
+                                <a class="nav-link" href="{{url_for('logout')}}">
                                     ログアウト
                                 </a>
                         </li>
@@ -51,7 +51,7 @@
        {{message}}
    </div>
    {% endfor %}
-   
+
     <div class="blog-body">
 
         {% block body %}{% endblock %}
