@@ -1,20 +1,20 @@
 {% extends "layout.html" %}
 
 {% block body %}
-    <form action="{{url_for('update_entry',id=entry.id)}}" method="post" class="add-entry">
-        <div class="form-group">
-            <label for="InputTitle">タイトル</label>
-            <input type="text" class="form-control" id="InputTitle" name="title" value="{{entry.title}}">
+<form action="{{url_for('entry.update_entry',id=entry.id)}}" method="post" class="add-entry">
+    <div class="form-group">
+        <label for="InputTitle">タイトル</label>
+        <input type="text" class="form-control" id="InputTitle" name="title" value="{{entry.title}}">
 
-        </div>
-        <div class="form-group">
-            <label for="InputText">本文</label>
-            <textarea class="form-cotrol" id="InputText" name="text" row="3">
+    </div>
+    <div class="form-group">
+        <label for="InputText">本文</label>
+        <textarea class="form-cotrol" id="InputText" name="text" row="3">
                 {{entry.text|safe}}
                 <!-- |safeフィルターでhtmlとして認識する -->
             </textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">更新</button>
+    </div>
+    <button type="submit" class="btn btn-primary">更新</button>
 
-    </form>
+</form>
 {% endblock %}
