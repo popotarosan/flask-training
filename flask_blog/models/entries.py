@@ -2,6 +2,8 @@
 from flask_blog import db
 # 投稿日時を扱うので
 from datetime import datetime
+# __init__で定義
+from flask_blog import db
 
 
 class Entry(db.Model):
